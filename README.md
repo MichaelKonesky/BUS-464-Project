@@ -119,3 +119,18 @@ erDiagram
         string RegistrationNumber
         int DeliveryEmployeeID FK
     }
+
+erDiagram
+    Customer ||--o{ Order : "places"
+    Order ||--o{ OrderItem : "contains"
+    Pizza ||--o{ OrderItem : "included_in"
+    Payment ||--|| Order : "pays_for"
+    Employee ||--o{ Task : "performs"
+    Task ||--|| Order : "fulfills"
+    Ingredient ||--o{ StockOrderDetail : "included_in"
+    Supplier ||--o{ StockOrder : "supplies"
+    StockOrder ||--o{ StockOrderDetail : "contains"
+    Feedback ||--|| Customer : "given_by"
+    Shift ||--|| Employee : "assigned_to"
+    Delivery ||--|| Order : "delivers"
+    Vehicle ||--o{ Delivery : "used_for"
